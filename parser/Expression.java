@@ -52,7 +52,7 @@ class Expression extends PascalSyntax {
 		if(relOpr != null) {
 			f.genInstr("", "pushl", "%eax", "");
 			oprSimpleExpr.genCode(f);
-			if(relOpr.operator.kind == TokenKind.lessToken) {
+			if(relOpr.operator.kind.isRelOpr()) {
 				f.genInstr("", "popl", "%ecx", "");
 				f.genInstr("", "cmpl", "%eax,%ecx", "");
 				f.genInstr("", "movl", "$0,%eax", "");

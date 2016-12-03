@@ -43,7 +43,7 @@ public class Program extends PascalSyntax {
 		block.genCode(f);
 		f.genInstr("prog$" + progLabel, "enter", "$" + progVariableBytes + ",$" + block.blockLevel, "Start of " + progName);
 		block.statmList.genCode(f);
-		f.genInstr("", "leave", "", "");
+		f.genInstr("", "leave", "", "End of " + progName);
 		f.genInstr("", "ret", "", "");
 	}	
 

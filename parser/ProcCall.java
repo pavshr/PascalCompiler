@@ -78,6 +78,23 @@ class ProcCall extends Statement {
 					if(unsCon.name != null) {
 						//TODO: named const
 					}
+				}else if (expressions.get(i).simpleExpr.terms.get(0).factors.get(0) instanceof Variable) {
+					Variable variable = (Variable) expressions.get(i).simpleExpr.terms.get(0).factors.get(0);
+					if (variable.constDeclRef != null) {
+						if (variable.constDeclRef.constant != null) {
+
+						}else{
+							if (variable.constDeclRef.type instanceof types.BoolType) {
+								f.genInstr("", "pushl", "%eax", "Push next param.");
+								f.genInstr("", "call", "write_bool", "");
+								f.genInstr("", "addl", "$4,%esp", "Pop param.");
+							}else{
+								f.genInstr("", "pushl", "%eax", "Push next param.");
+								f.genInstr("", "call", "write_char", "");
+								f.genInstr("", "addl", "$4,%esp", "Pop param.");
+							}
+						}
+					}
 				}
 			}
 		}else{

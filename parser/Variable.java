@@ -8,6 +8,7 @@ class Variable extends Factor {
 	String name;
 	Expression expression;
 	PascalDecl ref;
+	ConstDecl constDeclRef;
 
 	types.Type type;
 
@@ -44,6 +45,9 @@ class Variable extends Factor {
 			expression.check(curScope, lib);
 		}
 		ref = d;
+		if (ref instanceof ConstDecl) {
+			constDeclRef = (ConstDecl) ref;
+		}
 		type = ref.type;
 		if (expression != null) {
 			ref.arrayDecl.indexType.checkType(expression.type, "array index", this, "array index is not matching.");
@@ -56,9 +60,12 @@ class Variable extends Factor {
 		if (ref instanceof VarDecl) {
 			f.genInstr("", "movl", (-4 * ref.declLevel) + "(%ebp),%edx", "");
 			f.genInstr("", "movl", ref.declOffset + "(%edx),%eax", name);
-		} else if (ref instanceof ConstDecl && !name.equals("eol")) {
-			ConstDecl cref = (ConstDecl) ref;
-			cref.constant.genCode(f);
+		} else {
+			if (constDeclRef.constant != null) {
+				constDeclRef.constant.genCode(f);
+			} else {
+				f.genInstr("", "movl", "$" + constDeclRef.constVal + ",%eax", "" + constDeclRef.constVal);
+			}
 		}
 	}
 
