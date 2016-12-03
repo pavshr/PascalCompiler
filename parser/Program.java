@@ -33,10 +33,14 @@ public class Program extends PascalSyntax {
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+		
+	}
+
+	@Override
 	public void check(Block curScope, Library lib) {
 		block.check(curScope, lib);
 	}
-
 
 	@Override
 	public void prettyPrint() {

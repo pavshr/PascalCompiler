@@ -59,6 +59,11 @@ public class Library extends Block {
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+
+	}
+
+	@Override
 	public String identify() {
 		return "library class";
 	}

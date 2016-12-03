@@ -33,9 +33,8 @@ public class Main {
 	    else if (testParser) doTestParser(s);
 	    else if (testChecker)
 	        doTestChecker(s);
-	    // Del 4:
-	    // else
-	    //     doRunRealCompiler(s);
+	     else
+	         doRunRealCompiler(s);
 	} catch (PascalError e) {
 	    System.out.println();
 	    System.err.println(e.getMessage());
@@ -116,10 +115,11 @@ public class Main {
 	
 	library = new Library();
 	prog.check(library, library);
+	System.out.println("done");
     }
 
 
-    /* Del 4:
+    /* Del 4: */
     private static void doRunRealCompiler(Scanner s) {
 	System.out.print("Parsing...");
 	Program prog = Program.parse(s);
@@ -141,7 +141,6 @@ public class Main {
 
 	assembleCode();
     }
-    */
 
 
     private static void assembleCode() {
