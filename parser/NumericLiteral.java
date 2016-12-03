@@ -34,6 +34,11 @@ class NumericLiteral extends UnsignedConstant {
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+		f.genInstr("", "movl", "$" + constVal + ",%eax", "" + intVal);
+	}
+
+	@Override
 	void prettyPrint() {
 		Main.log.prettyPrint("" + intVal);
 	}

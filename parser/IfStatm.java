@@ -42,6 +42,26 @@ class IfStatm extends Statement {
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+		String startLabel = f.getLocalLabel();
+		String endLabel = null;
+		f.genInstr("", "", "", "Start if-statement");
+		expression.genCode(f);
+		f.genInstr("", "cmpl", "$0,%eax", "");
+		f.genInstr("", "je", startLabel, "");
+		statement.genCode(f);
+		if (elseStatement != null) {
+			endLabel = f.getLocalLabel();
+			f.genInstr("", "jmp", endLabel, "");
+		}
+		f.genInstr(startLabel, "", "", "");
+		if (elseStatement != null) {
+			elseStatement.genCode(f);
+			f.genInstr(endLabel, "", "", "");
+		}
+	}
+
+	@Override
 	void prettyPrint() {
 		Main.log.prettyPrint("if ");
 		expression.prettyPrint();

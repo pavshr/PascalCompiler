@@ -58,6 +58,38 @@ class ProcCall extends Statement {
 
 	}
 
+	@Override
+	public void genCode(CodeFile f) {
+		if(name.equals("write")) { // write proc call
+			for (int i = expressions.size() - 1; i >= 0; i--) { // must be pushed backwards
+				expressions.get(i).genCode(f);
+				if (expressions.get(i).simpleExpr.terms.get(0).factors.get(0) instanceof UnsignedConstant) {
+					UnsignedConstant unsCon = (UnsignedConstant) expressions.get(i).simpleExpr.terms.get(0).factors.get(0);
+					if (unsCon.charLiteral != null) {
+						f.genInstr("", "pushl", "%eax", "Push next param.");
+						f.genInstr("", "call", "write_char", "");
+						f.genInstr("", "addl", "$4,%esp", "Pop param.");
+					}
+					if (unsCon.numericLiteral != null) {
+						f.genInstr("", "pushl", "%eax", "Push next param.");
+						f.genInstr("", "call", "write_int", "");
+						f.genInstr("", "addl", "$4,%esp", "Pop param.");
+					}
+					if(unsCon.name != null) {
+						//TODO: named const
+					}
+				}
+			}
+		}else{
+			for (int i = expressions.size() - 1; i >= 0; i--) { // must be pushed backwards
+				expressions.get(i).genCode(f);
+				f.genInstr("", "pushl", "%eax", "");
+			}
+			f.genInstr("", "call", "proc$" + name + procRef.declLevel, "");
+			f.genInstr("", "addl", "$8,%esp", "");
+		}
+	}
+
 	@Override 
 	public String identify() {
 		return "<proc call> on line " + lineNum;

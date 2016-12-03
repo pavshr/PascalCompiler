@@ -26,6 +26,11 @@ class EmptyStatm extends Statement {
 		//do nothing
 	}
 
+	@Override
+	public void genCode(CodeFile f) {
+
+	}
+
 
 	@Override
 	void prettyPrint() {

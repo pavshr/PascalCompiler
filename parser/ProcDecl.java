@@ -35,9 +35,15 @@ class ProcDecl extends PascalDecl {
 
 	@Override
 	void check(Block curScope, Library lib) {
+		declLevel = curScope.blockLevel + 1;
 		curScope.addDecl(name, this);
 		if (paramDeclList != null) paramDeclList.check(block, lib);
 		block.check(curScope, lib);
+	}
+
+	@Override
+	public void genCode(CodeFile f) {
+
 	}
 
 	@Override

@@ -36,6 +36,11 @@ class Negation extends Factor {
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+
+	}
+
+	@Override
 	public types.Type getType() {
 		return type;
 	}

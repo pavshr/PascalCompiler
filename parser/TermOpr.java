@@ -30,6 +30,11 @@ class TermOpr extends Operator {
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+
+	}
+
+	@Override
 	void prettyPrint() {
 		Main.log.prettyPrint(" " + operator.kind.toString());
 	}

@@ -32,11 +32,17 @@ class FuncDecl extends ProcDecl {
 
 	@Override
 	void check(Block curScope, Library lib) {
+		declLevel = curScope.blockLevel + 1;
 		curScope.addDecl(name, this);
 		if (paramDeclList != null) paramDeclList.check(block, lib);
 		typeName.check(curScope, lib);
 		type = typeName.typeRef.type;
 		block.check(curScope, lib);
+	}
+
+	@Override
+	public void genCode(CodeFile f) {
+
 	}
 
 	@Override

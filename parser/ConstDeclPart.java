@@ -41,6 +41,11 @@ class ConstDeclPart extends PascalSyntax {
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+
+	}
+
+	@Override
 	void prettyPrint() {
 		Main.log.prettyPrintLn("const");
 		Main.log.prettyIndent();

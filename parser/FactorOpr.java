@@ -28,6 +28,11 @@ static FactorOpr parse(Scanner s) {
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+
+	}
+
+	@Override
 	void prettyPrint() {
 		Main.log.prettyPrint(" " + operator.kind.toString());
 	}

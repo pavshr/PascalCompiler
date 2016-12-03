@@ -18,6 +18,7 @@ class Block extends PascalSyntax{
 
 	int blockLevel; 
 	int variableBytes = 0;
+	int variableOffset = -36;
 
 	Block(int lNum) {
 		super(lNum);

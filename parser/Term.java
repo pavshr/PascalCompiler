@@ -81,6 +81,38 @@ class Term extends PascalSyntax {
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+		for(Factor factor : factors) {
+			//System.out.println("fac: " + factor);
+			if(factor instanceof Negation) {
+				//System.out.println("neg");
+				factor = (Negation) factor;
+				factor.genCode(f);
+			}
+			if(factor instanceof InnerExpr) {
+				//System.out.println("inner");
+				factor = (InnerExpr) factor;
+				factor.genCode(f);
+			}
+			if(factor instanceof Variable) {
+				System.out.println("varia");
+				factor = (Variable) factor;
+				factor.genCode(f);
+			}
+			if(factor instanceof FuncCall) {
+				//System.out.println("funccall");
+				factor = (FuncCall) factor;
+				factor.genCode(f);
+			}
+			if(factor instanceof UnsignedConstant) {
+				System.out.println("const act");
+				factor = (UnsignedConstant) factor;
+				factor.genCode(f);
+			}
+		}
+	}
+
+	@Override
 	void prettyPrint() {
 		for(int i = 0; i < factors.size(); i++) {
 			factors.get(i).prettyPrint();

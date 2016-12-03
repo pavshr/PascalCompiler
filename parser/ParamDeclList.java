@@ -42,6 +42,11 @@ class ParamDeclList extends PascalSyntax{
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+
+	}
+
+	@Override
 	void prettyPrint() {
 		Main.log.prettyPrint("(");
 		for (int i = 0; i < paramDeclarations.size(); i++) {

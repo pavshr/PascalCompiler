@@ -47,6 +47,21 @@ class Expression extends PascalSyntax {
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+		simpleExpr.genCode(f);
+		if(relOpr != null) {
+			f.genInstr("", "pushl", "%eax", "");
+			oprSimpleExpr.genCode(f);
+			if(relOpr.operator.kind == TokenKind.lessToken) {
+				f.genInstr("", "popl", "%ecx", "");
+				f.genInstr("", "cmpl", "%eax,%ecx", "");
+				f.genInstr("", "movl", "$0,%eax", "");
+				f.genInstr("", "setl", "%al", "Test " + relOpr.operator.kind);
+			}
+		}
+	}
+
+	@Override
 	void prettyPrint() {
 		simpleExpr.prettyPrint();
 		if (relOpr != null) {

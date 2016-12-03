@@ -25,6 +25,11 @@ class TypeDecl extends PascalDecl {
 	void check(Block curScope, Library lib) {}
 
 	@Override
+	public void genCode(CodeFile f) {
+
+	}
+
+	@Override
 	void checkWhetherAssignable(PascalSyntax where) {
 		where.error("You cannot assign to the TypeDecl");
 	}

@@ -64,6 +64,17 @@ class SimpleExpr extends PascalSyntax {
 		type = terms.get(0).type;
 	}
 
+	@Override
+	public void genCode(CodeFile f) {
+		if (prefixOpr != null) prefixOpr.genCode(f);
+		for(int i = 0; i < terms.size(); i++) {
+			terms.get(i).genCode(f);
+			if (i < termOperators.size()) {
+				termOperators.get(i).genCode(f); // fix it
+			}
+		}
+	}
+
 
 	@Override
 	void prettyPrint() {

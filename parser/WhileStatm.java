@@ -41,6 +41,18 @@ public class WhileStatm extends Statement {
 		body.check(curScope, lib);
 	}
 
+	@Override
+	public void genCode(CodeFile f) {
+		String testLabel = f.getLocalLabel(),
+               endLabel  = f.getLocalLabel();
+        f.genInstr(testLabel, "", "", "Start while-statement");
+        expr.genCode(f);
+        f.genInstr("", "cmpl", "$0,%eax", "");
+        f.genInstr("", "je", endLabel, "");
+        body.genCode(f);
+        f.genInstr("", "jmp", testLabel, "");
+        f.genInstr(endLabel, "", "", "End while-statement");
+	}
 
 	@Override 
 	void prettyPrint() {

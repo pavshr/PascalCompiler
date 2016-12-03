@@ -42,6 +42,11 @@ class Type extends PascalSyntax{
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+
+	}
+
+	@Override
 	void prettyPrint() {
 		if(typeName != null) typeName.prettyPrint();
 		if(arrayType != null) arrayType.prettyPrint();

@@ -32,9 +32,17 @@ class ConstDecl extends PascalDecl {
 
 	@Override
 	void check(Block curScope, Library lib) {
+		declLevel = curScope.blockLevel;
+		System.out.println("FROM CONST " + curScope.blockLevel);
+		System.out.println(this);
 		constant.check(curScope, lib);
 		type = constant.type;
 		constVal = constant.constVal;
+	}
+
+	@Override
+	public void genCode(CodeFile f) {
+
 	}
 
 	@Override

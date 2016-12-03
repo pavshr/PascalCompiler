@@ -60,6 +60,19 @@ class UnsignedConstant extends Constant {
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+		if (name != null) {
+
+		}
+		if(charLiteral != null) {
+			charLiteral.genCode(f);
+		}
+		if(numericLiteral != null) {
+			numericLiteral.genCode(f);
+		}
+	}
+
+	@Override
 	public types.Type getType() {
 		return type;
 	}

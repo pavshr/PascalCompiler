@@ -29,6 +29,11 @@ class PrefixOpr extends Operator {
 	@Override
 	void check(Block curScope, Library lib) { }
 
+	@Override
+	public void genCode(CodeFile f) {
+
+	}
+
 
 	@Override
 	void prettyPrint() {

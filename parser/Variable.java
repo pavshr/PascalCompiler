@@ -51,6 +51,18 @@ class Variable extends Factor {
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+		System.out.println("var ref is " + ref + " " + name);
+		if (ref instanceof VarDecl) {
+			f.genInstr("", "movl", (-4 * ref.declLevel) + "(%ebp),%edx", "");
+			f.genInstr("", "movl", ref.declOffset + "(%edx),%eax", name);
+		} else if (ref instanceof ConstDecl && !name.equals("eol")) {
+			ConstDecl cref = (ConstDecl) ref;
+			cref.constant.genCode(f);
+		}
+	}
+
+	@Override
 	public types.Type getType() {
 		return type;
 	}

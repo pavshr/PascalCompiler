@@ -44,6 +44,11 @@ class ArrayType extends Type{
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+
+	}
+
+	@Override
 	void prettyPrint() {
 		Main.log.prettyPrint("array ");
 		Main.log.prettyPrint("[");
