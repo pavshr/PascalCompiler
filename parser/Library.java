@@ -5,6 +5,8 @@ import static scanner.TokenKind.*;
 
 public class Library extends Block {
 	
+	int blockLevel = 0;
+
 	types.BoolType boolType;
     types.CharType charType;
     types.IntType intType;
@@ -37,7 +39,7 @@ public class Library extends Block {
 		eolConst = new ConstDecl("eol", -1);
 		eolConst.name = "eol";
 		eolConst.type = charType;
-		//eolConst.constVal = 10 ? not sure, must be checked with teacher.
+		eolConst.constVal = 10;
 		decls.put("eol", eolConst);
 
 		//Constant false
@@ -59,9 +61,7 @@ public class Library extends Block {
 	}
 
 	@Override
-	public void genCode(CodeFile f) {
-
-	}
+	public void genCode(CodeFile f) {}
 
 	@Override
 	public String identify() {

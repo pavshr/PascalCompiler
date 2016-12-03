@@ -63,6 +63,36 @@ class StatmList extends PascalSyntax{
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+		for (Statement statm : statementList) {
+			if (statm instanceof CompoundStatm) {
+				statm = (CompoundStatm) statm;
+				statm.genCode(f);
+			}
+			if (statm instanceof IfStatm) {
+				statm = (IfStatm) statm;
+				statm.genCode(f);
+			}
+			if (statm instanceof AssignStatm) {
+				statm = (AssignStatm) statm;
+				statm.genCode(f);
+			}
+			if (statm instanceof ProcCall) {
+				statm = (ProcCall) statm;
+				statm.genCode(f);
+			}
+			if (statm instanceof WhileStatm) {
+				statm = (WhileStatm) statm;
+				statm.genCode(f);
+			}
+			if (statm instanceof EmptyStatm) {
+				statm = (EmptyStatm) statm;
+				statm.genCode(f);
+			}
+		}
+	}
+
+	@Override
 	void prettyPrint() {
 		for (int i = 0; i < statementList.size(); i++) {
 			statementList.get(i).prettyPrint();

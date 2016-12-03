@@ -16,6 +16,9 @@ class Block extends PascalSyntax{
 
 	Block outerScope;
 
+	int blockLevel; 
+	int variableBytes = 0;
+
 	Block(int lNum) {
 		super(lNum);
 	}
@@ -97,7 +100,7 @@ class Block extends PascalSyntax{
 	@Override
 	void check(Block curScope, Library lib) {
 		outerScope = curScope;
-		
+		blockLevel = curScope.blockLevel + 1;
 		// ConstDeclPart
 		if(constDeclPart != null) {
 			for (ConstDecl constDecl : constDeclPart.constDeclarations) {
@@ -125,5 +128,19 @@ class Block extends PascalSyntax{
 		} 
 		//StatmList
 		statmList.check(this, lib);
+	}
+	@Override
+	public void genCode(CodeFile f) {
+		if (constDeclPart != null) constDeclPart.genCode(f);
+		if (varDeclPart != null) varDeclPart.genCode(f);
+		for (ProcDecl procDecl : declarations) {
+			if (procDecl instanceof FuncDecl) {
+				procDecl = (FuncDecl) procDecl;
+				procDecl.genCode(f);
+			}else{
+				procDecl.genCode(f);
+			}
+		}
+		if (blockLevel > 1) statmList.genCode(f);
 	}
 }

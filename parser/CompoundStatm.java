@@ -32,6 +32,11 @@ class CompoundStatm extends Statement {
 	}
 
 	@Override
+	public void genCode(CodeFile f) {
+		statmList.genCode(f);
+	}
+
+	@Override
 	void prettyPrint() {
 		Main.log.prettyPrintLn("begin");
 		Main.log.prettyIndent();

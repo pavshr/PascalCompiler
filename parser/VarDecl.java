@@ -30,6 +30,7 @@ class VarDecl extends PascalDecl{
 
 	@Override
 	void check(Block curScope, Library lib) {
+		curScope.variableBytes += 4; // each var needs 4 bytes in memory.
 		typeParser.check(curScope, lib);
 		if(typeParser.arrayType != null) {
 			arrayDecl = new types.ArrayType(typeParser.arrayType.typeP.type, typeParser.arrayType.from.type, typeParser.arrayType.from.constVal, typeParser.arrayType.to.constVal);
@@ -59,5 +60,10 @@ class VarDecl extends PascalDecl{
 		Main.log.prettyPrint(": ");
 		typeParser.prettyPrint();
 		Main.log.prettyPrintLn(";");
+	}
+
+	@Override
+	public void genCode(CodeFile f) {
+
 	}
 }
