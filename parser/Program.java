@@ -37,7 +37,7 @@ public class Program extends PascalSyntax {
 		int progVariableBytes = 32 + block.variableBytes;
 		f.genInstr("", ".globl main", "", "");
 		f.genInstr("main", "", "", "");
-		f.genInstr("", "call", "prog$" + progLabel, "#Start program");
+		f.genInstr("", "call", "prog$" + progLabel, "Start program");
 		f.genInstr("", "movl", "$0,%eax", "Set status 0 and");
 		f.genInstr("", "ret", "", "terminate the program");
 		block.genCode(f);

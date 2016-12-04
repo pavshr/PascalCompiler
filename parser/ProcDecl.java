@@ -37,13 +37,22 @@ class ProcDecl extends PascalDecl {
 	void check(Block curScope, Library lib) {
 		declLevel = curScope.blockLevel + 1;
 		curScope.addDecl(name, this);
-		if (paramDeclList != null) paramDeclList.check(block, lib);
+		if (paramDeclList != null) {
+			paramDeclList.blockLevel = declLevel;
+			paramDeclList.blockOffset = curScope.variableBytes;
+			paramDeclList.check(block, lib);
+		}
 		block.check(curScope, lib);
 	}
 
 	@Override
 	public void genCode(CodeFile f) {
-		
+		String procLabel = f.getLabel(name);
+		f.genInstr("proc$" + procLabel, "enter", "$" + (32 + block.variableBytes) + ",$" + declLevel, "Start of " + name);
+		if (paramDeclList != null) paramDeclList.genCode(f);
+		block.genCode(f);
+		f.genInstr("", "leave", "", "End of " + name);
+		f.genInstr("", "ret", "", "");
 	}
 
 	@Override

@@ -56,7 +56,7 @@ class FuncCall extends Factor {
 			expressions.get(i).genCode(f);
 			f.genInstr("", "pushl", "%eax", "Push param #" + (i + 1));
 		}
-		f.genInstr("", "call", "func$" + name + funcRef.declLevel, "");
+		f.genInstr("", "call", "func$" + name + "_" + funcRef.declLevel, "");
 		f.genInstr("", "addl", "$8,%esp", "Pop parameters");
 	}
 

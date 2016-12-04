@@ -61,8 +61,6 @@ class Variable extends Factor {
 			f.genInstr("", "movl", (-4 * ref.declLevel) + "(%ebp),%edx", "");
 			f.genInstr("", "movl", ref.declOffset + "(%edx),%eax", name);
 		} else if (ref instanceof ParamDecl){
-			//ParamDecl paramDeclRef = (ParamDecl) ref;
-			System.out.println("From var: " + ref.declLevel);
 			f.genInstr("", "movl", (-4 * ref.declLevel) + "(%ebp),%edx", "");
 			f.genInstr("", "movl", ref.declOffset + "(%edx),%eax", name);
 		} else {

@@ -51,7 +51,7 @@ class FuncDecl extends ProcDecl {
 		f.genInstr("func$" + funcLabel, "enter", "$" + (32 + block.variableBytes) + ",$" + declLevel, "Start of " + name);
 		if (paramDeclList != null) paramDeclList.genCode(f);
 		block.genCode(f);
-		f.genInstr("", "movl", "-32(%ebp),%eax", "Fetch return value");
+		f.genInstr("", "movl", "-32(%ebp),%eax", "Fetch return value"); // -32? Slide 19 in the lecture
 		f.genInstr("", "leave", "", "End of " + name);
 		f.genInstr("", "ret", "", "");
 	}

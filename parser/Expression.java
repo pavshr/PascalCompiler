@@ -52,16 +52,28 @@ class Expression extends PascalSyntax {
 		if(relOpr != null) {
 			f.genInstr("", "pushl", "%eax", "");
 			oprSimpleExpr.genCode(f);
-			if(relOpr.operator.kind == TokenKind.equalToken) {
-				f.genInstr("", "popl", "%ecx", "");
-				f.genInstr("", "cmpl", "%eax,%ecx", "");
-				f.genInstr("", "movl", "$0,%eax", "");
-				f.genInstr("", "sete", "%al", "Test " + relOpr.operator.kind);
-			} else {
-				f.genInstr("", "popl", "%ecx", "");
-				f.genInstr("", "cmpl", "%eax,%ecx", "");
-				f.genInstr("", "movl", "$0,%eax", "");
-				f.genInstr("", "setl", "%al", "Test " + relOpr.operator.kind);
+			f.genInstr("", "popl", "%ecx", "");
+			f.genInstr("", "cmpl", "%eax,%ecx", "");
+			f.genInstr("", "movl", "$0,%eax", "");
+			switch (relOpr.operator.kind) {
+				case equalToken:		
+					f.genInstr("", "sete", "%al", "Test " + relOpr.operator.kind);
+					break;
+				case greaterToken:
+					f.genInstr("", "setg", "%al", "Test " + relOpr.operator.kind);
+					break;
+				case lessToken:
+					f.genInstr("", "setl", "%al", "Test " + relOpr.operator.kind);
+					break;
+				case greaterEqualToken:
+					f.genInstr("", "setge", "%al", "Test " + relOpr.operator.kind);
+					break;
+				case lessEqualToken:
+					f.genInstr("", "setle", "%al", "Test " + relOpr.operator.kind);
+					break;
+				default: // not equal token
+					f.genInstr("", "setne", "%al", "Test " + relOpr.operator.kind);
+					break;
 			}
 		}
 	}

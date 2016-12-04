@@ -108,10 +108,10 @@ class ProcCall extends Statement {
 		}else{ // end of write
 			for (int i = expressions.size() - 1; i >= 0; i--) { // must be pushed backwards
 				expressions.get(i).genCode(f);
-				f.genInstr("", "pushl", "%eax", "");
+				f.genInstr("", "pushl", "%eax", "Push param #" + (i + 1) + ".");
 			}
-			f.genInstr("", "call", "proc$" + name + procRef.declLevel, "");
-			f.genInstr("", "addl", "$8,%esp", "");
+			f.genInstr("", "call", "proc$" + name + "_" + procRef.declLevel, "");
+			f.genInstr("", "addl", "$"+ 4 * (expressions.size()) + ",%esp", "Pop params.");
 		}
 	}
 

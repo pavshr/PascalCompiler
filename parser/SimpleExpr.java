@@ -79,6 +79,11 @@ class SimpleExpr extends PascalSyntax {
 						f.genInstr("", "addl", "%ecx,%eax", "" + termOperators.get(i).operator.kind);
 						break;
 					case subtractToken:
+						f.genInstr("", "pushl", "%eax", "");
+						terms.get(i + 1).genCode(f);
+						f.genInstr("", "movl", "%eax,%ecx", "");
+						f.genInstr("", "popl", "%eax", "");
+						f.genInstr("", "subl", "%ecx,%eax", "" + termOperators.get(i).operator.kind);
 						break;
 						//TODO:
 					default:

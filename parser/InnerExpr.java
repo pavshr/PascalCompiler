@@ -37,7 +37,7 @@ class InnerExpr extends Factor {
 
 	@Override
 	public void genCode(CodeFile f) {
-
+		expression.genCode(f);
 	}
 
 	@Override

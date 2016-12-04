@@ -2,128 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4725897-5b8a-482a-896c-8d5f5059b3f7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-0/kommentar.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-0/kommentar.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-0/kommentar2.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-0/kommentar2.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-0/tegn.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-0/tegn.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/dekl.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/dekl.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/galpar.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/galpar.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/galpar2.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/galpar2.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/kommentar.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/kommentar.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/kroell.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/kroell.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/likhet.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/likhet.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/param1.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/param1.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/param2.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/param2.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/semikolon.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-1/semikolon.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/dobldekl.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/dobldekl.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/galbruk.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/galbruk.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/ingen-main.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/ingen-main.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/mainfeil.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/mainfeil.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/mainfeil2.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/mainfeil2.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/paramfeil.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/paramfeil.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/ukjent.alboc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Arkiv/Del-2/ukjent.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-1-Skanner/kommentar-test.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-1-Skanner/nestet_kommentar.error" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-1-Skanner/nestet_kommentar.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-1-Skanner/uendelig_kommentar.error" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-1-Skanner/uendelig_kommentar.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-1-Skanner/uendelig_tegn_literal.error" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-1-Skanner/uendelig_tegn_literal.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-1-Skanner/ulovlig_tegn.error" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-1-Skanner/ulovlig_tegn.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/double-minus.error" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/double-minus.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/double-var-part.error" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/double-var-part.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/double-var.error" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/double-var.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/extra-right-par.error" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/extra-right-par.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/many-nots.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/missing-right-par.error" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/missing-right-par.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/no-final-dot.error" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/no-final-dot.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/no-program.error" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/no-program.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/wrong-params.error" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-2-Parser/wrong-params.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/navnefeil-1.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/navnefeil-1.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/navnefeil-2.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/navnefeil-2.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/paramfeil-1.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/paramfeil-1.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/paramfeil-1.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/paramfeil-2.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/paramfeil-2.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/paramfeil-2.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/typefeil-1.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/typefeil-1.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/typefeil-1.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/typefeil-2.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/typefeil-2.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/typefeil-2.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/typefeil-3.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/typefeil-3.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/typefeil-3.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/typefeil-4.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/typefeil-4.message" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/feil/Del-3-Sjekker/typefeil-4.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/10star" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/10star.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/10star.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/10star.res" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/10star.s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/Makefile" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/easter" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/easter.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/easter.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/easter.res" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/easter.s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/gcd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/gcd.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/gcd.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/gcd.res" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/gcd.s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/libpas2016.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/mini" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/mini.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/mini.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/mini.res" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/mini.s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/opers" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/opers.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/opers.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/opers.res" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/opers.s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/primes" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/primes.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/primes.pas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/primes.res" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/primes.s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pascalfiles/test/test.pas" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/parser/ProcDecl.class" afterPath="$PROJECT_DIR$/classes/parser/ProcDecl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pascal2016.jar" afterPath="$PROJECT_DIR$/pascal2016.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/Main.java" afterPath="$PROJECT_DIR$/main/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/PascalSyntax.java" afterPath="$PROJECT_DIR$/parser/PascalSyntax.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/FuncDecl.java" afterPath="$PROJECT_DIR$/parser/FuncDecl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/ProcDecl.java" afterPath="$PROJECT_DIR$/parser/ProcDecl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pascalfiles/test/easter.s" afterPath="$PROJECT_DIR$/pascalfiles/test/easter.s" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -140,28 +24,7 @@
     <favorites_list name="inf2100-oblig-2016" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProcCall.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parser/ProcCall.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="67" column="35" lean-forward="false" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="128" column="24" lean-forward="false" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -215,8 +78,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -259,7 +122,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -510,9 +373,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14806867" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14949928" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -584,6 +447,22 @@
     <entry file="file://$PROJECT_DIR$/parser/ProcCall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
+          <caret line="67" column="35" lean-forward="false" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parser/ProcCall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
           <caret line="67" column="35" lean-forward="true" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
           <folding />
         </state>
@@ -604,18 +483,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parser/ProcCall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="67" column="35" lean-forward="false" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="128" column="24" lean-forward="false" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parser/ProcCall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="124" column="35" lean-forward="false" selection-start-line="124" selection-start-column="35" selection-end-line="124" selection-end-column="35" />
           <folding />
         </state>
       </provider>

@@ -117,9 +117,20 @@ class Term extends PascalSyntax {
 						f.genInstr("", "idivl", "%ecx", "");
 						f.genInstr("", "movl", "%edx,%eax", "" + factorOperators.get(i).operator.kind);
 						break;
-					case subtractToken:
+					case multiplyToken:
+						f.genInstr("", "pushl", "%eax", "");
+						factors.get(i + 1).genCode(f);
+						f.genInstr("", "movl", "%eax,%ecx", "");
+						f.genInstr("", "popl", "%eax", "");
+						f.genInstr("", "imull", "%ecx,%eax", "" + factorOperators.get(i).operator.kind);
 						break;
-						//TODO:
+					case divToken:
+						f.genInstr("", "pushl", "%eax", "");
+						factors.get(i + 1).genCode(f);
+						f.genInstr("", "movl", "%eax,%ecx", "");
+						f.genInstr("", "popl", "%eax", "");
+						f.genInstr("", "cdq", "", "");
+						f.genInstr("", "idivl", "%ecx", "/");
 					default:
 						//TODO orToken
 						break;

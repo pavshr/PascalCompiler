@@ -1,7 +1,7 @@
-# Code file created by Pascal2016 compiler 2016-12-04 02:20:29
+# Code file created by Pascal2016 compiler 2016-12-04 15:05:31
         .globl main                         
 main:
-        call    prog$gcd_1              # #Start program
+        call    prog$gcd_1              # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
 func$gcd_2:
@@ -37,12 +37,12 @@ func$gcd_2:
         movl    -8(%ebp),%edx           
         movl    12(%edx),%eax           # n
         pushl   %eax                    # Push param #1
-        call    func$gcd2               
+        call    func$gcd_2              
         addl    $8,%esp                 # Pop parameters
         movl    -8(%ebp),%edx           
         movl    %eax,-32(%edx)          # gcd :=
 .L0004:
-                                        # # End if-statement
+                                        # End if-statement
         movl    -32(%ebp),%eax          # Fetch return value
         leave                           # End of gcd
         ret                             
@@ -52,10 +52,10 @@ prog$gcd_1:
         pushl   %eax                    # Push param #2
         movl    $1071,%eax              # 1071
         pushl   %eax                    # Push param #1
-        call    func$gcd2               
+        call    func$gcd_2              
         addl    $8,%esp                 # Pop parameters
         movl    -4(%ebp),%edx           
-        movl    %eax,4(%edx)            # res :=
+        movl    %eax,-36(%edx)          # res :=
         movl    $71,%eax                # 'G'
         pushl   %eax                    # Push next param.
         call    write_char              
