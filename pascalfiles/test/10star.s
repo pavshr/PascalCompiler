@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-12-03 23:41:39
+# Code file created by Pascal2016 compiler 2016-12-04 02:31:36
         .globl main                         
 main:
         call    prog$tenstars_1         # #Start program
@@ -8,7 +8,7 @@ prog$tenstars_1:
         enter   $36,$1                  # Start of tenstars
         movl    $0,%eax                 # 0
         movl    -4(%ebp),%edx           
-        movl    %eax,-4(%edx)           # i :=
+        movl    %eax,-36(%edx)          # i :=
 .L0002:
                                         # Start while-statement
         movl    -4(%ebp),%edx           
@@ -21,7 +21,7 @@ prog$tenstars_1:
         setl    %al                     # Test <
         cmpl    $0,%eax                 
         je      .L0003                  
-        movl    $42,%eax                # *
+        movl    $42,%eax                # '*'
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
@@ -33,7 +33,7 @@ prog$tenstars_1:
         popl    %eax                    
         addl    %ecx,%eax               # +
         movl    -4(%ebp),%edx           
-        movl    %eax,-4(%edx)           # i :=
+        movl    %eax,-36(%edx)          # i :=
         jmp     .L0002                  
 .L0003:
                                         # End while-statement
@@ -41,5 +41,5 @@ prog$tenstars_1:
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
-        leave                           # End of tenstars_1
+        leave                           # End of tenstars
         ret                             

@@ -38,8 +38,6 @@ class VarDecl extends PascalDecl{
 		type = typeParser.type;
 		declOffset = curScope.variableOffset;
 		curScope.variableOffset -= 4;
-		System.out.println("CURSCOPEBLLVL " + curScope.blockLevel);
-		System.out.println(this);
 		declLevel = curScope.blockLevel;
 	}
 
