@@ -60,7 +60,7 @@ class Constant extends Factor {
 	public void genCode(CodeFile f) {
 		
 		unsignedConst.genCode(f);
-		if (prefixOpr != null) prefixOpr.genCode(f); //todo:
+		if (prefixOpr != null) prefixOpr.genCode(f);
 	}
 
 	@Override

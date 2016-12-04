@@ -44,9 +44,7 @@ class ArrayType extends Type{
 	}
 
 	@Override
-	public void genCode(CodeFile f) {
-
-	}
+	public void genCode(CodeFile f) { }
 
 	@Override
 	void prettyPrint() {

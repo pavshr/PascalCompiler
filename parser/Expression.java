@@ -42,7 +42,6 @@ class Expression extends PascalSyntax {
             type.checkType(oprSimpleExpr.type, oprName+" operands", this,
                 "Operands to "+oprName+" are of different type!");
             type = lib.boolType;
-			//oprSimpleExpr.check(curScope, lib);
 		}
 	}
 

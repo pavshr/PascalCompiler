@@ -27,9 +27,7 @@ class EmptyStatm extends Statement {
 	}
 
 	@Override
-	public void genCode(CodeFile f) {
-
-	}
+	public void genCode(CodeFile f) {}
 
 
 	@Override

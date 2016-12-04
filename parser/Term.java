@@ -133,13 +133,7 @@ class Term extends PascalSyntax {
 				}
 			
 			}
-		}
-
-
-
-
-
-		
+		}	
 	}
 
 	@Override

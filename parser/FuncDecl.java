@@ -42,7 +42,6 @@ class FuncDecl extends ProcDecl {
 		typeName.check(curScope, lib);
 		type = typeName.typeRef.type;
 		block.check(curScope, lib);
-
 	}
 
 	@Override

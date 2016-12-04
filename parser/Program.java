@@ -40,9 +40,20 @@ public class Program extends PascalSyntax {
 		f.genInstr("", "call", "prog$" + progLabel, "Start program");
 		f.genInstr("", "movl", "$0,%eax", "Set status 0 and");
 		f.genInstr("", "ret", "", "terminate the program");
-		block.genCode(f);
+		
+		for (ProcDecl procDecl : block.declarations) {
+			if (procDecl instanceof FuncDecl) {
+				procDecl = (FuncDecl) procDecl;
+				procDecl.genCode(f);
+			}else{
+				procDecl.genCode(f);
+			}
+		}
+
 		f.genInstr("prog$" + progLabel, "enter", "$" + progVariableBytes + ",$" + block.blockLevel, "Start of " + progName);
-		block.statmList.genCode(f);
+		
+		block.genCode(f);
+
 		f.genInstr("", "leave", "", "End of " + progName);
 		f.genInstr("", "ret", "", "");
 	}	

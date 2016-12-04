@@ -39,6 +39,7 @@ class ProcDecl extends PascalDecl {
 	@Override
 	void check(Block curScope, Library lib) {
 		declLevel = curScope.blockLevel + 1;
+		block.outerScope = curScope;
 		curScope.addDecl(name, this);
 		if (paramDeclList != null) {
 			paramDeclList.blockLevel = declLevel;
@@ -53,12 +54,21 @@ class ProcDecl extends PascalDecl {
 	@Override
 	public void genCode(CodeFile f) {
 		procLabel = f.getLabel(name);
+
+		for (ProcDecl procDecl : block.declarations) {
+			if (procDecl instanceof FuncDecl) {
+				procDecl = (FuncDecl) procDecl;
+				procDecl.genCode(f);
+			}else{
+				procDecl.genCode(f);
+			}
+		}
+
 		f.genInstr("proc$" + procLabel, "enter", "$" + (32 + block.variableBytes) + ",$" + declLevel, "Start of " + name);
 		if (paramDeclList != null) paramDeclList.genCode(f);
 		block.genCode(f);
 		f.genInstr("", "leave", "", "End of " + name);
 		f.genInstr("", "ret", "", "");
-		
 	}
 
 	@Override

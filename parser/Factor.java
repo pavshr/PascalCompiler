@@ -45,9 +45,7 @@ abstract class Factor extends PascalSyntax {
 	}
 
 	@Override
-	public void genCode(CodeFile f) {
-
-	}
+	public void genCode(CodeFile f) {}
 
 	@Override 
 	public String identify() {

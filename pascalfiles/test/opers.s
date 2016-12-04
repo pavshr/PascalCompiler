@@ -1,11 +1,9 @@
-# Code file created by Pascal2016 compiler 2016-12-04 17:59:52
+# Code file created by Pascal2016 compiler 2016-12-04 21:18:55
         .globl main                         
 main:
         call    prog$operatortest_1     # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
-proc$testunaryboolean_2:
-        enter   $32,$2                  # Start of testunaryboolean
 proc$test_3:
         enter   $32,$3                  # Start of test
         movl    $110,%eax               # 'n'
@@ -53,6 +51,8 @@ proc$test_3:
         addl    $4,%esp                 # Pop param.
         leave                           # End of test
         ret                             
+proc$testunaryboolean_2:
+        enter   $32,$2                  # Start of testunaryboolean
         movl    $0,%eax                 # 0
         pushl   %eax                    # Push param #1.
         call    proc$test_3             
@@ -63,8 +63,6 @@ proc$test_3:
         addl    $4,%esp                 # Pop params.
         leave                           # End of testunaryboolean
         ret                             
-proc$testbinaryboolean_4:
-        enter   $32,$2                  # Start of testbinaryboolean
 proc$test_5:
         enter   $32,$3                  # Start of test
         movl    -12(%ebp),%edx          
@@ -179,6 +177,8 @@ proc$test_5:
         addl    $4,%esp                 # Pop param.
         leave                           # End of test
         ret                             
+proc$testbinaryboolean_4:
+        enter   $32,$2                  # Start of testbinaryboolean
         movl    $0,%eax                 # 0
         pushl   %eax                    # Push param #2.
         movl    $0,%eax                 # 0
@@ -205,8 +205,6 @@ proc$test_5:
         addl    $8,%esp                 # Pop params.
         leave                           # End of testbinaryboolean
         ret                             
-proc$testunarynumeric_6:
-        enter   $32,$2                  # Start of testunarynumeric
 proc$test_7:
         enter   $32,$3                  # Start of test
         movl    $45,%eax                # '-'
@@ -280,6 +278,8 @@ proc$test_7:
         addl    $4,%esp                 # Pop param.
         leave                           # End of test
         ret                             
+proc$testunarynumeric_6:
+        enter   $32,$2                  # Start of testunarynumeric
         movl    $17,%eax                # 17
         pushl   %eax                    # Push param #1.
         call    proc$test_7             
@@ -295,8 +295,6 @@ proc$test_7:
         addl    $4,%esp                 # Pop params.
         leave                           # End of testunarynumeric
         ret                             
-proc$testbinarynumeric_8:
-        enter   $32,$2                  # Start of testbinarynumeric
 proc$test_9:
         enter   $32,$3                  # Start of test
         movl    -12(%ebp),%edx          
@@ -578,6 +576,8 @@ proc$test_9:
                                         # End if-statement
         leave                           # End of test
         ret                             
+proc$testbinarynumeric_8:
+        enter   $32,$2                  # Start of testbinarynumeric
         movl    $17,%eax                # 17
         pushl   %eax                    # Push param #2.
         movl    $17,%eax                # 17

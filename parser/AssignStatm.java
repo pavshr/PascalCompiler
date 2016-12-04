@@ -56,16 +56,6 @@ class AssignStatm extends Statement {
 			f.genInstr("", "movl", (-4 * variable.ref.declLevel) + "(%ebp),%edx", "");
 			f.genInstr("", "movl", "%eax," + (-32 - variable.ref.declOffset) +"(%edx)", variable.name + " :=");
 		}
-		// System.out.println("!!!!!!!!!!!!!!!!!!");
-		// System.out.println(variable.ref);
-		// if (variable.ref instanceof VarDecl) {
-		// 	f.genInstr("", "movl", (-4 * variable.ref.declLevel) + "(%ebp),%edx", "");
-		// 	f.genInstr("", "movl", "%eax,-32(%edx)", "");
-		// }
-		// if (variable.ref instanceof FuncDecl) {
-		// 	f.genInstr("", "movl", (-4 * (variable.ref.declLevel + 1)) + "(%ebp),%edx", "");
-		// 	f.genInstr("", "movl", "%eax,-32(%edx)", "");
-		// }
 	}
 
 	@Override

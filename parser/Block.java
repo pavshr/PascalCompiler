@@ -132,16 +132,6 @@ class Block extends PascalSyntax{
 	}
 	@Override
 	public void genCode(CodeFile f) {
-		if (constDeclPart != null) constDeclPart.genCode(f);
-		if (varDeclPart != null) varDeclPart.genCode(f);
-		for (ProcDecl procDecl : declarations) {
-			if (procDecl instanceof FuncDecl) {
-				procDecl = (FuncDecl) procDecl;
-				procDecl.genCode(f);
-			}else{
-				procDecl.genCode(f);
-			}
-		}
-		if (blockLevel != 1) statmList.genCode(f);
+		statmList.genCode(f);
 	}
 }

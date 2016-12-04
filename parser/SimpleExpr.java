@@ -96,7 +96,6 @@ class SimpleExpr extends PascalSyntax {
 						//do nothing
 						break;
 				}
-				
 			}
 		}
 	}

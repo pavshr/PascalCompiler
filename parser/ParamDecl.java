@@ -31,15 +31,12 @@ class ParamDecl extends PascalDecl {
 	@Override
 	void check(Block curScope, Library lib) {
 		curScope.addDecl(name, this);
-		//System.out.println("added a param " + name + "on line " +lineNum+ " in " + curScope.identify());
 		typeName.check(curScope, lib);
 		type = typeName.typeRef.type;
 	}
 
 	@Override
-	public void genCode(CodeFile f) {
-
-	}
+	public void genCode(CodeFile f) {}
 
 	@Override
 	void checkWhetherAssignable(PascalSyntax where) {

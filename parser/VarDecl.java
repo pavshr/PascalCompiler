@@ -66,7 +66,5 @@ class VarDecl extends PascalDecl{
 	}
 
 	@Override
-	public void genCode(CodeFile f) {
-
-	}
+	public void genCode(CodeFile f) {}
 }
