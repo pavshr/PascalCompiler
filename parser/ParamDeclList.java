@@ -8,6 +8,8 @@ import java.util.ArrayList;
 class ParamDeclList extends PascalSyntax{
 	
 	ArrayList<ParamDecl> paramDeclarations = new ArrayList<ParamDecl>();
+	int blockLevel;
+	int blockOffset;
 
 	ParamDeclList(int lNum) {
 		super(lNum);
@@ -37,13 +39,18 @@ class ParamDeclList extends PascalSyntax{
 	@Override
 	void check(Block curScope, Library lib) {
 		for (ParamDecl paramDecl : paramDeclarations) {
+			paramDecl.declLevel = this.blockLevel;
+			blockOffset += 4;
+			paramDecl.declOffset = this.blockOffset;
 			paramDecl.check(curScope, lib);
 		}
 	}
 
 	@Override
 	public void genCode(CodeFile f) {
-
+		for (ParamDecl paramDecl : paramDeclarations) {
+			paramDecl.genCode(f);
+		}
 	}
 
 	@Override

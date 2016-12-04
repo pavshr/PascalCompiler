@@ -44,7 +44,7 @@ class IfStatm extends Statement {
 	@Override
 	public void genCode(CodeFile f) {
 		String startLabel = f.getLocalLabel();
-		String endLabel = null;
+		String endLabel = null; 
 		f.genInstr("", "", "", "Start if-statement");
 		expression.genCode(f);
 		f.genInstr("", "cmpl", "$0,%eax", "");
@@ -57,7 +57,7 @@ class IfStatm extends Statement {
 		f.genInstr(startLabel, "", "", "");
 		if (elseStatement != null) {
 			elseStatement.genCode(f);
-			f.genInstr(endLabel, "", "", "");
+			f.genInstr(endLabel, "", "", "# End if-statement");
 		}
 	}
 

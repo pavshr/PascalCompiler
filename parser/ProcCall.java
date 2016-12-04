@@ -61,19 +61,15 @@ class ProcCall extends Statement {
 	@Override
 	public void genCode(CodeFile f) {
 		if(name.equals("write")) { // write proc call
-			for (int i = expressions.size() - 1; i >= 0; i--) { // must be pushed backwards
+			for (int i = 0; i < expressions.size(); i++) { // must be pushed backwards
 				expressions.get(i).genCode(f);
 				if (expressions.get(i).simpleExpr.terms.get(0).factors.get(0) instanceof UnsignedConstant) {
 					UnsignedConstant unsCon = (UnsignedConstant) expressions.get(i).simpleExpr.terms.get(0).factors.get(0);
 					if (unsCon.charLiteral != null) {
-						f.genInstr("", "pushl", "%eax", "Push next param.");
-						f.genInstr("", "call", "write_char", "");
-						f.genInstr("", "addl", "$4,%esp", "Pop param.");
+						writeProcCallForGenCode(f, "write_char");
 					}
 					if (unsCon.numericLiteral != null) {
-						f.genInstr("", "pushl", "%eax", "Push next param.");
-						f.genInstr("", "call", "write_int", "");
-						f.genInstr("", "addl", "$4,%esp", "Pop param.");
+						writeProcCallForGenCode(f, "write_int");
 					}
 					if(unsCon.name != null) {
 						//TODO: named const
@@ -82,22 +78,34 @@ class ProcCall extends Statement {
 					Variable variable = (Variable) expressions.get(i).simpleExpr.terms.get(0).factors.get(0);
 					if (variable.constDeclRef != null) {
 						if (variable.constDeclRef.constant != null) {
-
-						}else{
-							if (variable.constDeclRef.type instanceof types.BoolType) {
-								f.genInstr("", "pushl", "%eax", "Push next param.");
-								f.genInstr("", "call", "write_bool", "");
-								f.genInstr("", "addl", "$4,%esp", "Pop param.");
-							}else{
-								f.genInstr("", "pushl", "%eax", "Push next param.");
-								f.genInstr("", "call", "write_char", "");
-								f.genInstr("", "addl", "$4,%esp", "Pop param.");
+							if (variable.constDeclRef.type instanceof types.CharType) {
+								writeProcCallForGenCode(f, "write_char");
+							} else if (variable.constDeclRef.type instanceof types.IntType) {
+								writeProcCallForGenCode(f, "write_int");
+							} else {
+								writeProcCallForGenCode(f, "write_bool");
 							}
+						}else{
+							if (variable.ref.type instanceof types.CharType) {
+								writeProcCallForGenCode(f, "write_char");
+							}else if (variable.ref.type instanceof types.IntType) {
+								writeProcCallForGenCode(f, "write_int");
+							}else{
+								writeProcCallForGenCode(f, "write_bool");	
+							}
+						}
+					}else{
+						if (variable.ref.type instanceof types.CharType) {
+								writeProcCallForGenCode(f, "write_char");
+						} else if (variable.ref.type instanceof types.IntType) {
+							writeProcCallForGenCode(f, "write_int");
+						} else {
+							writeProcCallForGenCode(f, "write_bool");
 						}
 					}
 				}
 			}
-		}else{
+		}else{ // end of write
 			for (int i = expressions.size() - 1; i >= 0; i--) { // must be pushed backwards
 				expressions.get(i).genCode(f);
 				f.genInstr("", "pushl", "%eax", "");
@@ -121,5 +129,11 @@ class ProcCall extends Statement {
 			if (i < expressions.size() - 1) Main.log.prettyPrint(", ");
 		}
 		Main.log.prettyPrint(")");
+	}
+
+	private void writeProcCallForGenCode(CodeFile f, String typeOfCall) {
+		f.genInstr("", "pushl", "%eax", "Push next param.");
+		f.genInstr("", "call", typeOfCall, "");
+		f.genInstr("", "addl", "$4,%esp", "Pop param.");
 	}
 }

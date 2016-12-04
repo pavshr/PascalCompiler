@@ -58,7 +58,6 @@ class Term extends PascalSyntax {
 				factor.check(curScope, lib);
 			}
 			if(factor instanceof FuncCall) {
-				//System.out.println("funccall");
 				factor = (FuncCall) factor;
 				factor.check(curScope, lib);
 			}
@@ -87,29 +86,53 @@ class Term extends PascalSyntax {
 			if(factor instanceof Negation) {
 				//System.out.println("neg");
 				factor = (Negation) factor;
-				factor.genCode(f);
 			}
 			if(factor instanceof InnerExpr) {
 				//System.out.println("inner");
 				factor = (InnerExpr) factor;
-				factor.genCode(f);
 			}
 			if(factor instanceof Variable) {
-				System.out.println("varia");
+				//System.out.println("varia");
 				factor = (Variable) factor;
-				factor.genCode(f);
 			}
 			if(factor instanceof FuncCall) {
-				//System.out.println("funccall");
+				System.out.println("funccall");
 				factor = (FuncCall) factor;
-				factor.genCode(f);
 			}
 			if(factor instanceof UnsignedConstant) {
-				System.out.println("const act");
+				//System.out.println("const act");
 				factor = (UnsignedConstant) factor;
-				factor.genCode(f);
 			}
 		}
+		factors.get(0).genCode(f);
+		if (factorOperators.size() != 0) {
+			for(int i = 0; i <= factorOperators.size() - 1; i++) {
+				switch (factorOperators.get(i).operator.kind) {
+					case modToken:
+						f.genInstr("", "pushl", "%eax", "");
+						factors.get(i + 1).genCode(f);
+						f.genInstr("", "movl", "%eax,%ecx", "");
+						f.genInstr("", "popl", "%eax", "");
+						f.genInstr("", "cdq", "", "");
+						f.genInstr("", "idivl", "%ecx", "");
+						f.genInstr("", "movl", "%edx,%eax", "" + factorOperators.get(i).operator.kind);
+						break;
+					case subtractToken:
+						break;
+						//TODO:
+					default:
+						//TODO orToken
+						break;
+				}
+			
+			}
+		}
+
+
+
+
+
+		
 	}
 
 	@Override

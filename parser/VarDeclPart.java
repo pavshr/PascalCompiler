@@ -40,7 +40,9 @@ class VarDeclPart extends PascalSyntax {
 
 	@Override
 	public void genCode(CodeFile f) {
-
+		for (VarDecl varDecl : varDeclarations) {
+			varDecl.genCode(f);
+		}
 	}
 
 	@Override

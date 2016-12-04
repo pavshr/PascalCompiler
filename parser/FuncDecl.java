@@ -34,15 +34,26 @@ class FuncDecl extends ProcDecl {
 	void check(Block curScope, Library lib) {
 		declLevel = curScope.blockLevel + 1;
 		curScope.addDecl(name, this);
-		if (paramDeclList != null) paramDeclList.check(block, lib);
+		if (paramDeclList != null) {
+			paramDeclList.blockLevel = declLevel;
+			paramDeclList.blockOffset = curScope.variableBytes;
+			paramDeclList.check(block, lib);
+		}
 		typeName.check(curScope, lib);
 		type = typeName.typeRef.type;
 		block.check(curScope, lib);
+
 	}
 
 	@Override
 	public void genCode(CodeFile f) {
-
+		String funcLabel = f.getLabel(name);
+		f.genInstr("func$" + funcLabel, "enter", "$" + (32 + block.variableBytes) + ",$" + declLevel, "Start of " + name);
+		if (paramDeclList != null) paramDeclList.genCode(f);
+		block.genCode(f);
+		f.genInstr("", "movl", "-32(%ebp),%eax", "Fetch return value");
+		f.genInstr("", "leave", "", "End of " + name);
+		f.genInstr("", "ret", "", "");
 	}
 
 	@Override

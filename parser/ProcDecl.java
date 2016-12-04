@@ -43,7 +43,7 @@ class ProcDecl extends PascalDecl {
 
 	@Override
 	public void genCode(CodeFile f) {
-
+		
 	}
 
 	@Override

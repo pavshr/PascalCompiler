@@ -100,8 +100,8 @@ class Block extends PascalSyntax{
 
 	@Override
 	void check(Block curScope, Library lib) {
-		outerScope = curScope;
 		blockLevel = curScope.blockLevel + 1;
+		outerScope = curScope;
 		// ConstDeclPart
 		if(constDeclPart != null) {
 			for (ConstDecl constDecl : constDeclPart.constDeclarations) {

@@ -56,8 +56,13 @@ class Variable extends Factor {
 
 	@Override
 	public void genCode(CodeFile f) {
-		System.out.println("var ref is " + ref + " " + name);
+		System.out.println("var ref is " + ref.type + " " + name);
 		if (ref instanceof VarDecl) {
+			f.genInstr("", "movl", (-4 * ref.declLevel) + "(%ebp),%edx", "");
+			f.genInstr("", "movl", ref.declOffset + "(%edx),%eax", name);
+		} else if (ref instanceof ParamDecl){
+			//ParamDecl paramDeclRef = (ParamDecl) ref;
+			System.out.println("From var: " + ref.declLevel);
 			f.genInstr("", "movl", (-4 * ref.declLevel) + "(%ebp),%edx", "");
 			f.genInstr("", "movl", ref.declOffset + "(%edx),%eax", name);
 		} else {

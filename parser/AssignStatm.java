@@ -51,7 +51,10 @@ class AssignStatm extends Statement {
 		expression.genCode(f);
 		if(variable.ref instanceof VarDecl) {
 			f.genInstr("", "movl", (-4 * variable.ref.declLevel) + "(%ebp),%edx", "");
-		 	f.genInstr("", "movl", "%eax," + (32+ variable.ref.declOffset) +"(%edx)", variable.name + " :=");
+		 	f.genInstr("", "movl", "%eax," + (-32 - variable.ref.declOffset) +"(%edx)", variable.name + " :=");
+		}else if (variable.ref instanceof FuncDecl){
+			f.genInstr("", "movl", (-4 * variable.ref.declLevel) + "(%ebp),%edx", "");
+			f.genInstr("", "movl", "%eax," + (-32 - variable.ref.declOffset) +"(%edx)", variable.name + " :=");
 		}
 		// System.out.println("!!!!!!!!!!!!!!!!!!");
 		// System.out.println(variable.ref);

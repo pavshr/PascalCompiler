@@ -52,7 +52,12 @@ class FuncCall extends Factor {
 
 	@Override
 	public void genCode(CodeFile f) {
-
+		for (int i = expressions.size() - 1; i >= 0; i--) {
+			expressions.get(i).genCode(f);
+			f.genInstr("", "pushl", "%eax", "Push param #" + (i + 1));
+		}
+		f.genInstr("", "call", "func$" + name + funcRef.declLevel, "");
+		f.genInstr("", "addl", "$8,%esp", "Pop parameters");
 	}
 
 	@Override
