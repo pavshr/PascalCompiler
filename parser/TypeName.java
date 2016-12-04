@@ -34,7 +34,7 @@ class TypeName extends Type {
 
 	@Override
 	public void genCode(CodeFile f) {
-
+		
 	}
 
 	@Override

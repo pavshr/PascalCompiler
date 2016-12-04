@@ -38,11 +38,13 @@ class ParamDeclList extends PascalSyntax{
 
 	@Override
 	void check(Block curScope, Library lib) {
+		int amountParams = 0;
 		for (ParamDecl paramDecl : paramDeclarations) {
 			paramDecl.declLevel = this.blockLevel;
 			blockOffset += 4;
 			paramDecl.declOffset = this.blockOffset;
 			paramDecl.check(curScope, lib);
+			paramDecl.paramNr = amountParams++;
 		}
 	}
 

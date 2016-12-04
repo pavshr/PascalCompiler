@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-12-04 15:05:31
+# Code file created by Pascal2016 compiler 2016-12-04 18:02:31
         .globl main                         
 main:
         call    prog$gcd_1              # Start program
@@ -23,6 +23,7 @@ func$gcd_2:
         movl    %eax,-32(%edx)          # gcd :=
         jmp     .L0004                  
 .L0003:
+                                        # End if-statement
         movl    -8(%ebp),%edx           
         movl    8(%edx),%eax            # m
         pushl   %eax                    

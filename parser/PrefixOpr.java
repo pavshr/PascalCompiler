@@ -31,7 +31,7 @@ class PrefixOpr extends Operator {
 
 	@Override
 	public void genCode(CodeFile f) {
-
+		if (operator.kind != TokenKind.addToken) f.genInstr("", "negl", "%eax", operator.kind + " (prefix)");
 	}
 
 

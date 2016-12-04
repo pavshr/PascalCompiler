@@ -54,7 +54,7 @@ class IfStatm extends Statement {
 			endLabel = f.getLocalLabel();
 			f.genInstr("", "jmp", endLabel, "");
 		}
-		f.genInstr(startLabel, "", "", "");
+		f.genInstr(startLabel, "", "", "End if-statement");
 		if (elseStatement != null) {
 			elseStatement.genCode(f);
 			f.genInstr(endLabel, "", "", "End if-statement");

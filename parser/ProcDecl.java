@@ -9,6 +9,9 @@ class ProcDecl extends PascalDecl {
 	TypeName typeName;
 	Block block;
 
+	String procLabel;
+	int procParamDecls = 0;
+
 
 	ProcDecl(String name, int lNum) {
 		super(name, lNum);
@@ -41,18 +44,21 @@ class ProcDecl extends PascalDecl {
 			paramDeclList.blockLevel = declLevel;
 			paramDeclList.blockOffset = curScope.variableBytes;
 			paramDeclList.check(block, lib);
+			typeName = paramDeclList.paramDeclarations.get(0).typeName;
+			procParamDecls = paramDeclList.paramDeclarations.size();
 		}
 		block.check(curScope, lib);
 	}
 
 	@Override
 	public void genCode(CodeFile f) {
-		String procLabel = f.getLabel(name);
+		procLabel = f.getLabel(name);
 		f.genInstr("proc$" + procLabel, "enter", "$" + (32 + block.variableBytes) + ",$" + declLevel, "Start of " + name);
 		if (paramDeclList != null) paramDeclList.genCode(f);
 		block.genCode(f);
 		f.genInstr("", "leave", "", "End of " + name);
 		f.genInstr("", "ret", "", "");
+		
 	}
 
 	@Override

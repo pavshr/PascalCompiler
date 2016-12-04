@@ -142,6 +142,6 @@ class Block extends PascalSyntax{
 				procDecl.genCode(f);
 			}
 		}
-		if (blockLevel > 1) statmList.genCode(f);
+		if (blockLevel != 1) statmList.genCode(f);
 	}
 }

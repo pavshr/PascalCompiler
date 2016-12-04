@@ -107,32 +107,28 @@ class Term extends PascalSyntax {
 		factors.get(0).genCode(f);
 		if (factorOperators.size() != 0) {
 			for(int i = 0; i <= factorOperators.size() - 1; i++) {
+				f.genInstr("", "pushl", "%eax", "");
+				factors.get(i + 1).genCode(f);
+				f.genInstr("", "movl", "%eax,%ecx", "");
+				f.genInstr("", "popl", "%eax", "");
 				switch (factorOperators.get(i).operator.kind) {
 					case modToken:
-						f.genInstr("", "pushl", "%eax", "");
-						factors.get(i + 1).genCode(f);
-						f.genInstr("", "movl", "%eax,%ecx", "");
-						f.genInstr("", "popl", "%eax", "");
 						f.genInstr("", "cdq", "", "");
 						f.genInstr("", "idivl", "%ecx", "");
 						f.genInstr("", "movl", "%edx,%eax", "" + factorOperators.get(i).operator.kind);
 						break;
 					case multiplyToken:
-						f.genInstr("", "pushl", "%eax", "");
-						factors.get(i + 1).genCode(f);
-						f.genInstr("", "movl", "%eax,%ecx", "");
-						f.genInstr("", "popl", "%eax", "");
 						f.genInstr("", "imull", "%ecx,%eax", "" + factorOperators.get(i).operator.kind);
 						break;
 					case divToken:
-						f.genInstr("", "pushl", "%eax", "");
-						factors.get(i + 1).genCode(f);
-						f.genInstr("", "movl", "%eax,%ecx", "");
-						f.genInstr("", "popl", "%eax", "");
 						f.genInstr("", "cdq", "", "");
 						f.genInstr("", "idivl", "%ecx", "/");
+						break;
+					case andToken:
+						f.genInstr("", "andl", "%ecx,%eax", "" + factorOperators.get(i).operator.kind);
+						break;
 					default:
-						//TODO orToken
+						//do nothing
 						break;
 				}
 			

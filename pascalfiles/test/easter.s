@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-12-04 14:59:27
+# Code file created by Pascal2016 compiler 2016-12-04 18:01:27
         .globl main                         
 main:
         call    prog$easter_1           # Start program
@@ -356,6 +356,7 @@ proc$easter_2:
         addl    $4,%esp                 # Pop param.
         jmp     .L0004                  
 .L0003:
+                                        # End if-statement
         movl    -8(%ebp),%edx           
         movl    -88(%edx),%eax          # day
         pushl   %eax                    # Push next param.

@@ -103,6 +103,14 @@ class ProcCall extends Statement {
 							writeProcCallForGenCode(f, "write_bool");
 						}
 					}
+				}else{
+					if (expressions.get(i).type instanceof types.CharType) {
+						writeProcCallForGenCode(f, "write_char");
+					} else if (expressions.get(i).type instanceof types.IntType) {
+						writeProcCallForGenCode(f, "write_int");
+					} else {
+						writeProcCallForGenCode(f, "write_bool");
+					}
 				}
 			}
 		}else{ // end of write
@@ -110,8 +118,8 @@ class ProcCall extends Statement {
 				expressions.get(i).genCode(f);
 				f.genInstr("", "pushl", "%eax", "Push param #" + (i + 1) + ".");
 			}
-			f.genInstr("", "call", "proc$" + name + "_" + procRef.declLevel, "");
-			f.genInstr("", "addl", "$"+ 4 * (expressions.size()) + ",%esp", "Pop params.");
+			f.genInstr("", "call", "proc$" + procRef.procLabel, "");
+			if (expressions.size() > 0) f.genInstr("", "addl", "$"+ 4 * (expressions.size()) + ",%esp", "Pop params.");
 		}
 	}
 

@@ -1,7 +1,7 @@
-# Code file created by Pascal2016 compiler 2016-12-03 23:45:33
+# Code file created by Pascal2016 compiler 2016-12-04 18:04:47
         .globl main                         
 main:
-        call    prog$mini_1             # #Start program
+        call    prog$mini_1             # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
 prog$mini_1:
